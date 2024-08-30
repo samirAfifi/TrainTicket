@@ -1,0 +1,74 @@
+<app-nav   (Login)="gitOpenLogin()" (Registration)="gitOpenRegistration()"></app-nav>
+
+<router-outlet></router-outlet>
+<div class="modal" id="registerModel">
+    <div class="modal-dialog">
+      <div class="modal-content"> 
+        <div class="modal-header">
+          <h4 class="modal-title">Regiter</h4>
+          <button type="button" class="btn-close"  (click)="gitCloseRegistration()"  data-bs-dismiss="modal"></button>
+        </div> 
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-6">
+                    <label>First Name</label>
+                    <input type="text" [(ngModel)]="registerObj.firstName"  class="form-control" />
+                </div>
+                <div class="col-6">
+                    <label>Last Name</label>
+                    <input type="text"  [(ngModel)]="registerObj.lastName"   class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label>Email</label>
+                    <input type="text" [(ngModel)]="registerObj.email"  class="form-control" />
+                </div>
+                <div class="col-6">
+                    <label>Phone</label>
+                    <input type="text" [(ngModel)]="registerObj.Phone"  class="form-control" />
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-6">
+                    <label>Password</label>
+                    <input type="text" [(ngModel)]="registerObj.password"   class="form-control" />
+                </div>
+            </div>
+        </div> 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger"  (click)="gitCloseRegistration()">Close</button>
+          <button type="button" class="btn btn-success" (click)="onRegister()"  >Register</button>
+        </div> 
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="loginModel">
+    <div class="modal-dialog">
+      <div class="modal-content"> 
+        <div class="modal-header">
+          <h4 class="modal-title">Login</h4>
+          <button type="button" class="btn-close" (click)="gitCloseLogin()"    data-bs-dismiss="modal"></button>
+        </div> 
+        <div class="modal-body">
+             
+            <div class="row"> 
+                <div class="col-12">
+                    <label>Phone</label>
+                    <input type="text" [(ngModel)]="loginObj.phone"   class="form-control" />
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-12">
+                    <label>Password</label>
+                    <input type="text " [(ngModel)]="loginObj.password"   class="form-control" />
+                </div>
+            </div>
+        </div> 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="gitCloseLogin()">Close</button>
+          <button type="button" class="btn btn-success" (click)="onLogin()"   >Login</button>
+        </div> 
+      </div>
+    </div>
+  </div>
